@@ -11,6 +11,26 @@ webhooks:
     service:
       name: webhook-service
       namespace: system
+      path: /mutate-ansibleee-openstack-org-v1alpha1-openstackansibleee
+  failurePolicy: Fail
+  name: mopenstackansibleee.kb.io
+  rules:
+  - apiGroups:
+    - ansibleee.openstack.org
+    apiVersions:
+    - v1alpha1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - openstackansibleees
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
       path: /mutate-core-openstack-org-v1beta1-openstackcontrolplane
   failurePolicy: Fail
   name: mopenstackcontrolplane.kb.io
@@ -25,6 +45,566 @@ webhooks:
     resources:
     - openstackcontrolplanes
   sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-cinder-openstack-org-v1beta1-cinder
+  failurePolicy: Fail
+  name: mcinder.kb.io
+  rules:
+  - apiGroups:
+    - cinder.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - cinders
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-glance-openstack-org-v1beta1-glance
+  failurePolicy: Fail
+  name: mglance.kb.io
+  rules:
+  - apiGroups:
+    - glance.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - glances
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-horizon-openstack-org-v1beta1-horizon
+  failurePolicy: Fail
+  name: mhorizon.kb.io
+  rules:
+  - apiGroups:
+    - horizon.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - horizons
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-client-openstack-org-v1beta1-openstackclient
+  failurePolicy: Fail
+  name: mopenstackclient.kb.io
+  rules:
+  - apiGroups:
+    - client.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - openstackclients
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-memcached-openstack-org-v1beta1-memcached
+  failurePolicy: Fail
+  name: mmemcached.kb.io
+  rules:
+  - apiGroups:
+    - memcached.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - memcacheds
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-network-openstack-org-v1beta1-dnsmasq
+  failurePolicy: Fail
+  name: mdnsmasq.kb.io
+  rules:
+  - apiGroups:
+    - network.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - dnsmasqs
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-redis-openstack-org-v1beta1-redis
+  failurePolicy: Fail
+  name: mredis.kb.io
+  rules:
+  - apiGroups:
+    - redis.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - redises
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-ironic-openstack-org-v1beta1-ironic
+  failurePolicy: Fail
+  name: mironic.kb.io
+  rules:
+  - apiGroups:
+    - ironic.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - ironics
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-keystone-openstack-org-v1beta1-keystoneapi
+  failurePolicy: Fail
+  name: mkeystoneapi.kb.io
+  rules:
+  - apiGroups:
+    - keystone.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - keystoneapis
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-manila-openstack-org-v1beta1-manila
+  failurePolicy: Fail
+  name: mmanila.kb.io
+  rules:
+  - apiGroups:
+    - manila.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - manilas
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-mariadb-openstack-org-v1beta1-galera
+  failurePolicy: Fail
+  name: mgalera.kb.io
+  rules:
+  - apiGroups:
+    - mariadb.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - galeras
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-mariadb-openstack-org-v1beta1-mariadb
+  failurePolicy: Fail
+  name: mmariadb.kb.io
+  rules:
+  - apiGroups:
+    - mariadb.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - mariadbs
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-neutron-openstack-org-v1beta1-neutronapi
+  failurePolicy: Fail
+  name: mneutronapi.kb.io
+  rules:
+  - apiGroups:
+    - neutron.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - neutronapis
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-nova-openstack-org-v1beta1-nova
+  failurePolicy: Fail
+  name: mnova.kb.io
+  rules:
+  - apiGroups:
+    - nova.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - nova
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-nova-openstack-org-v1beta1-novaapi
+  failurePolicy: Fail
+  name: mnovaapi.kb.io
+  rules:
+  - apiGroups:
+    - nova.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - novaapis
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-nova-openstack-org-v1beta1-novacell
+  failurePolicy: Fail
+  name: mnovacell.kb.io
+  rules:
+  - apiGroups:
+    - nova.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - novacells
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-nova-openstack-org-v1beta1-novaconductor
+  failurePolicy: Fail
+  name: mnovaconductor.kb.io
+  rules:
+  - apiGroups:
+    - nova.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - novaconductors
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-nova-openstack-org-v1beta1-novaexternalcompute
+  failurePolicy: Fail
+  name: mnovaexternalcompute.kb.io
+  rules:
+  - apiGroups:
+    - nova.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - novaexternalcomputes
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-nova-openstack-org-v1beta1-novametadata
+  failurePolicy: Fail
+  name: mnovametadata.kb.io
+  rules:
+  - apiGroups:
+    - nova.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - novametadata
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-nova-openstack-org-v1beta1-novanovncproxy
+  failurePolicy: Fail
+  name: mnovanovncproxy.kb.io
+  rules:
+  - apiGroups:
+    - nova.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - novanovncproxies
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-nova-openstack-org-v1beta1-novascheduler
+  failurePolicy: Fail
+  name: mnovascheduler.kb.io
+  rules:
+  - apiGroups:
+    - nova.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - novaschedulers
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-baremetal-openstack-org-v1beta1-openstackprovisionserver
+  failurePolicy: Fail
+  name: mopenstackprovisionserver.kb.io
+  rules:
+  - apiGroups:
+    - baremetal.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - openstackprovisionservers
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-ovn-openstack-org-v1beta1-ovncontroller
+  failurePolicy: Fail
+  name: movncontroller.kb.io
+  rules:
+  - apiGroups:
+    - ovn.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - ovncontrollers
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-ovn-openstack-org-v1beta1-ovndbcluster
+  failurePolicy: Fail
+  name: movndbcluster.kb.io
+  rules:
+  - apiGroups:
+    - ovn.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - ovndbclusters
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-ovn-openstack-org-v1beta1-ovnnorthd
+  failurePolicy: Fail
+  name: movnnorthd.kb.io
+  rules:
+  - apiGroups:
+    - ovn.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - ovnnorthds
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-ovs-openstack-org-v1beta1-ovs
+  failurePolicy: Fail
+  name: movs.kb.io
+  rules:
+  - apiGroups:
+    - ovs.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - ovs
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-placement-openstack-org-v1beta1-placementapi
+  failurePolicy: Fail
+  name: mplacementapi.kb.io
+  rules:
+  - apiGroups:
+    - placement.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - placementapis
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /mutate-telemetry-openstack-org-v1beta1-telemetry
+  failurePolicy: Fail
+  name: mtelemetry.kb.io
+  rules:
+  - apiGroups:
+    - telemetry.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - telemetries
+  sideEffects: None
 ---
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingWebhookConfiguration
@@ -32,6 +612,26 @@ metadata:
   creationTimestamp: null
   name: validating-webhook-configuration
 webhooks:
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-ansibleee-openstack-org-v1alpha1-openstackansibleee
+  failurePolicy: Fail
+  name: vopenstackansibleee.kb.io
+  rules:
+  - apiGroups:
+    - ansibleee.openstack.org
+    apiVersions:
+    - v1alpha1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - openstackansibleees
+  sideEffects: None
 - admissionReviewVersions:
   - v1
   clientConfig:
@@ -51,4 +651,585 @@ webhooks:
     - UPDATE
     resources:
     - openstackcontrolplanes
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-cinder-openstack-org-v1beta1-cinder
+  failurePolicy: Fail
+  name: vcinder.kb.io
+  rules:
+  - apiGroups:
+    - cinder.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - cinders
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-glance-openstack-org-v1beta1-glance
+  failurePolicy: Fail
+  name: vglance.kb.io
+  rules:
+  - apiGroups:
+    - glance.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - glances
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-horizon-openstack-org-v1beta1-horizon
+  failurePolicy: Fail
+  name: vhorizon.kb.io
+  rules:
+  - apiGroups:
+    - horizon.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - horizons
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-client-openstack-org-v1beta1-openstackclient
+  failurePolicy: Fail
+  name: vopenstackclient.kb.io
+  rules:
+  - apiGroups:
+    - client.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - openstackclients
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-memcached-openstack-org-v1beta1-memcached
+  failurePolicy: Fail
+  name: vmemcached.kb.io
+  rules:
+  - apiGroups:
+    - memcached.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - memcacheds
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-network-openstack-org-v1beta1-dnsmasq
+  failurePolicy: Fail
+  name: vdnsmasq.kb.io
+  rules:
+  - apiGroups:
+    - network.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - dnsmasqs
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-redis-openstack-org-v1beta1-redis
+  failurePolicy: Fail
+  name: vredis.kb.io
+  rules:
+  - apiGroups:
+    - redis.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - redises
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-ironic-openstack-org-v1beta1-ironic
+  failurePolicy: Fail
+  name: vironic.kb.io
+  rules:
+  - apiGroups:
+    - ironic.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - ironics
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-keystone-openstack-org-v1beta1-keystoneapi
+  failurePolicy: Fail
+  name: vkeystoneapi.kb.io
+  rules:
+  - apiGroups:
+    - keystone.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - keystoneapis
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-manila-openstack-org-v1beta1-manila
+  failurePolicy: Fail
+  name: vmanila.kb.io
+  rules:
+  - apiGroups:
+    - manila.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - manilas
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-mariadb-openstack-org-v1beta1-galera
+  failurePolicy: Fail
+  name: vgalera.kb.io
+  rules:
+  - apiGroups:
+    - mariadb.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - galeras
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-mariadb-openstack-org-v1beta1-mariadb
+  failurePolicy: Fail
+  name: vmariadb.kb.io
+  rules:
+  - apiGroups:
+    - mariadb.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - mariadbs
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-neutron-openstack-org-v1beta1-neutronapi
+  failurePolicy: Fail
+  name: vneutronapi.kb.io
+  rules:
+  - apiGroups:
+    - neutron.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - neutronapis
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-nova-openstack-org-v1beta1-nova
+  failurePolicy: Fail
+  name: vnova.kb.io
+  rules:
+  - apiGroups:
+    - nova.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - nova
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-nova-openstack-org-v1beta1-novaapi
+  failurePolicy: Fail
+  name: vnovaapi.kb.io
+  rules:
+  - apiGroups:
+    - nova.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - novaapis
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-nova-openstack-org-v1beta1-novacell
+  failurePolicy: Fail
+  name: vnovacell.kb.io
+  rules:
+  - apiGroups:
+    - nova.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - novacells
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-nova-openstack-org-v1beta1-novaconductor
+  failurePolicy: Fail
+  name: vnovaconductor.kb.io
+  rules:
+  - apiGroups:
+    - nova.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - novaconductors
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-nova-openstack-org-v1beta1-novaexternalcompute
+  failurePolicy: Fail
+  name: vnovaexternalcompute.kb.io
+  rules:
+  - apiGroups:
+    - nova.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - novaexternalcomputes
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-nova-openstack-org-v1beta1-novametadata
+  failurePolicy: Fail
+  name: vnovametadata.kb.io
+  rules:
+  - apiGroups:
+    - nova.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - novametadata
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-nova-openstack-org-v1beta1-novanovncproxy
+  failurePolicy: Fail
+  name: vnovanovncproxy.kb.io
+  rules:
+  - apiGroups:
+    - nova.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - novanovncproxies
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-nova-openstack-org-v1beta1-novascheduler
+  failurePolicy: Fail
+  name: vnovascheduler.kb.io
+  rules:
+  - apiGroups:
+    - nova.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - novaschedulers
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-baremetal-openstack-org-v1beta1-openstackbaremetalset
+  failurePolicy: Fail
+  name: vopenstackbaremetalset.kb.io
+  rules:
+  - apiGroups:
+    - baremetal.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    - DELETE
+    resources:
+    - openstackbaremetalsets
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-baremetal-openstack-org-v1beta1-openstackprovisionserver
+  failurePolicy: Fail
+  name: vopenstackprovisionserver.kb.io
+  rules:
+  - apiGroups:
+    - baremetal.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - openstackprovisionservers
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-ovn-openstack-org-v1beta1-ovncontroller
+  failurePolicy: Fail
+  name: vovncontroller.kb.io
+  rules:
+  - apiGroups:
+    - ovn.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - ovncontrollers
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-ovn-openstack-org-v1beta1-ovndbcluster
+  failurePolicy: Fail
+  name: vovndbcluster.kb.io
+  rules:
+  - apiGroups:
+    - ovn.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - ovndbclusters
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-ovn-openstack-org-v1beta1-ovnnorthd
+  failurePolicy: Fail
+  name: vovnnorthd.kb.io
+  rules:
+  - apiGroups:
+    - ovn.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - ovnnorthds
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-ovs-openstack-org-v1beta1-ovs
+  failurePolicy: Fail
+  name: vovs.kb.io
+  rules:
+  - apiGroups:
+    - ovs.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - ovs
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-placement-openstack-org-v1beta1-placementapi
+  failurePolicy: Fail
+  name: vplacementapi.kb.io
+  rules:
+  - apiGroups:
+    - placement.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - placementapis
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-telemetry-openstack-org-v1beta1-telemetry
+  failurePolicy: Fail
+  name: vtelemetry.kb.io
+  rules:
+  - apiGroups:
+    - telemetry.openstack.org
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - telemetries
   sideEffects: None

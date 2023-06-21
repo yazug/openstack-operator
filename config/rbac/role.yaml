@@ -6,6 +6,233 @@ metadata:
   name: manager-role
 rules:
 - apiGroups:
+  - ""
+  resources:
+  - pods
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - serviceaccounts
+  verbs:
+  - create
+  - get
+  - list
+  - update
+  - watch
+- apiGroups:
+  - ansibleee.openstack.org
+  resources:
+  - openstackansibleees
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ansibleee.openstack.org
+  resources:
+  - openstackansibleees/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - ansibleee.openstack.org
+  resources:
+  - openstackansibleees/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - apps
+  resources:
+  - daemonsets
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - apps
+  resources:
+  - deployments
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - apps
+  resources:
+  - statefulsets
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - apps
+  resources:
+  - statefulsets/status
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - baremetal.openstack.org
+  resources:
+  - openstackbaremetalsets
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - baremetal.openstack.org
+  resources:
+  - openstackbaremetalsets/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - baremetal.openstack.org
+  resources:
+  - openstackbaremetalsets/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - baremetal.openstack.org
+  resources:
+  - openstackprovisionservers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - baremetal.openstack.org
+  resources:
+  - openstackprovisionservers/finalizers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - baremetal.openstack.org
+  resources:
+  - openstackprovisionservers/status
+  verbs:
+  - get
+  - list
+  - patch
+  - update
+- apiGroups:
+  - batch
+  resources:
+  - cronjobs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - batch
+  resources:
+  - jobs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - cinder.openstack.org
+  resources:
+  - cinderapis
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - cinder.openstack.org
+  resources:
+  - cinderapis/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - cinder.openstack.org
+  resources:
+  - cinderapis/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - cinder.openstack.org
+  resources:
+  - cinderbackups
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - cinder.openstack.org
+  resources:
+  - cinderbackups/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - cinder.openstack.org
+  resources:
+  - cinderbackups/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
   - cinder.openstack.org
   resources:
   - cinders
@@ -18,6 +245,72 @@ rules:
   - update
   - watch
 - apiGroups:
+  - cinder.openstack.org
+  resources:
+  - cinders/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - cinder.openstack.org
+  resources:
+  - cinders/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - cinder.openstack.org
+  resources:
+  - cinderschedulers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - cinder.openstack.org
+  resources:
+  - cinderschedulers/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - cinder.openstack.org
+  resources:
+  - cinderschedulers/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - cinder.openstack.org
+  resources:
+  - cindervolumes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - cinder.openstack.org
+  resources:
+  - cindervolumes/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - cinder.openstack.org
+  resources:
+  - cindervolumes/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
   - client.openstack.org
   resources:
   - openstackclients
@@ -27,6 +320,140 @@ rules:
   - get
   - list
   - patch
+  - update
+  - watch
+- apiGroups:
+  - client.openstack.org
+  resources:
+  - openstackclients/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - client.openstack.org
+  resources:
+  - openstackclients/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - ""
+  resources:
+  - configmaps
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - configmaps/finalizers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - endpoints
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - nodes
+  verbs:
+  - get
+  - list
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - persistentvolumeclaims
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - pods/exec
+  verbs:
+  - create
+- apiGroups:
+  - ""
+  resources:
+  - secrets
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - secrets/finalizers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - services
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - volumes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
   - update
   - watch
 - apiGroups:
@@ -56,6 +483,131 @@ rules:
   - patch
   - update
 - apiGroups:
+  - dataplane.openstack.org
+  resources:
+  - openstackdataplanenodes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - dataplane.openstack.org
+  resources:
+  - openstackdataplanenodes
+  - openstackdataplaneroles
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - dataplane.openstack.org
+  resources:
+  - openstackdataplanenodes/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - dataplane.openstack.org
+  resources:
+  - openstackdataplanenodes/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - dataplane.openstack.org
+  resources:
+  - openstackdataplaneroles
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - dataplane.openstack.org
+  resources:
+  - openstackdataplaneroles/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - dataplane.openstack.org
+  resources:
+  - openstackdataplaneroles/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - dataplane.openstack.org
+  resources:
+  - openstackdataplanes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - dataplane.openstack.org
+  resources:
+  - openstackdataplanes/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - dataplane.openstack.org
+  resources:
+  - openstackdataplanes/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - dataplane.openstack.org
+  resources:
+  - openstackdataplaneservices
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - glance.openstack.org
+  resources:
+  - glanceapis
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - glance.openstack.org
+  resources:
+  - glanceapis/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - glance.openstack.org
+  resources:
+  - glanceapis/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
   - glance.openstack.org
   resources:
   - glances
@@ -67,6 +619,20 @@ rules:
   - patch
   - update
   - watch
+- apiGroups:
+  - glance.openstack.org
+  resources:
+  - glances/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - glance.openstack.org
+  resources:
+  - glances/status
+  verbs:
+  - get
+  - patch
+  - update
 - apiGroups:
   - heat.openstack.org
   resources:
@@ -92,9 +658,153 @@ rules:
   - update
   - watch
 - apiGroups:
+  - horizon.openstack.org
+  resources:
+  - horizons/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - horizon.openstack.org
+  resources:
+  - horizons/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - ironic.openstack.org
+  resources:
+  - ironicapis
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ironic.openstack.org
+  resources:
+  - ironicapis/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - ironic.openstack.org
+  resources:
+  - ironicapis/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - ironic.openstack.org
+  resources:
+  - ironicconductors
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ironic.openstack.org
+  resources:
+  - ironicconductors/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - ironic.openstack.org
+  resources:
+  - ironicconductors/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - ironic.openstack.org
+  resources:
+  - ironicinspectors
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ironic.openstack.org
+  resources:
+  - ironicinspectors/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - ironic.openstack.org
+  resources:
+  - ironicinspectors/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - ironic.openstack.org
+  resources:
+  - ironicneutronagents
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ironic.openstack.org
+  resources:
+  - ironicneutronagents/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - ironic.openstack.org
+  resources:
+  - ironicneutronagents/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
   - ironic.openstack.org
   resources:
   - ironics
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ironic.openstack.org
+  resources:
+  - ironics/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - ironic.openstack.org
+  resources:
+  - ironics/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - k8s.cni.cncf.io
+  resources:
+  - network-attachment-definitions
   verbs:
   - create
   - delete
@@ -116,6 +826,98 @@ rules:
   - update
   - watch
 - apiGroups:
+  - keystone.openstack.org
+  resources:
+  - keystoneapis/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - keystone.openstack.org
+  resources:
+  - keystoneapis/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - keystone.openstack.org
+  resources:
+  - keystoneendpoints
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - keystone.openstack.org
+  resources:
+  - keystoneendpoints/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - keystone.openstack.org
+  resources:
+  - keystoneendpoints/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - keystone.openstack.org
+  resources:
+  - keystoneservices
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - keystone.openstack.org
+  resources:
+  - keystoneservices/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - keystone.openstack.org
+  resources:
+  - keystoneservices/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - manila.openstack.org
+  resources:
+  - manilaapis
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - manila.openstack.org
+  resources:
+  - manilaapis/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - manila.openstack.org
+  resources:
+  - manilaapis/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
   - manila.openstack.org
   resources:
   - manilas
@@ -127,6 +929,72 @@ rules:
   - patch
   - update
   - watch
+- apiGroups:
+  - manila.openstack.org
+  resources:
+  - manilas/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - manila.openstack.org
+  resources:
+  - manilas/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - manila.openstack.org
+  resources:
+  - manilaschedulers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - manila.openstack.org
+  resources:
+  - manilaschedulers/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - manila.openstack.org
+  resources:
+  - manilaschedulers/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - manila.openstack.org
+  resources:
+  - manilashares
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - manila.openstack.org
+  resources:
+  - manilashares/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - manila.openstack.org
+  resources:
+  - manilashares/status
+  verbs:
+  - get
+  - patch
+  - update
 - apiGroups:
   - mariadb.openstack.org
   resources:
@@ -142,7 +1010,75 @@ rules:
 - apiGroups:
   - mariadb.openstack.org
   resources:
+  - galeras/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - mariadb.openstack.org
+  resources:
+  - galeras/status
+  verbs:
+  - get
+  - list
+  - patch
+  - update
+- apiGroups:
+  - mariadb.openstack.org
+  resources:
+  - mariadbdatabases
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - mariadb.openstack.org
+  resources:
+  - mariadbdatabases/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - mariadb.openstack.org
+  resources:
+  - mariadbdatabases/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - mariadb.openstack.org
+  resources:
   - mariadbs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - mariadb.openstack.org
+  resources:
+  - mariadbs/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - mariadb.openstack.org
+  resources:
+  - mariadbs/status
+  verbs:
+  - get
+  - list
+  - patch
+  - update
+- apiGroups:
+  - memcached.openstack.org
+  resources:
+  - memcacheds
   verbs:
   - create
   - delete
@@ -154,7 +1090,71 @@ rules:
 - apiGroups:
   - memcached.openstack.org
   resources:
-  - memcacheds
+  - memcacheds/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - memcached.openstack.org
+  resources:
+  - memcacheds/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - metal3.io
+  resources:
+  - baremetalhosts
+  verbs:
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - metal3.io
+  resources:
+  - baremetalhosts/status
+  verbs:
+  - get
+- apiGroups:
+  - metal3.io
+  resources:
+  - provisionings
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - network.openstack.org
+  resources:
+  - dnsdata
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - network.openstack.org
+  resources:
+  - dnsdata/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - network.openstack.org
+  resources:
+  - dnsdata/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - network.openstack.org
+  resources:
+  - dnsdatas
   verbs:
   - create
   - delete
@@ -176,6 +1176,46 @@ rules:
   - update
   - watch
 - apiGroups:
+  - network.openstack.org
+  resources:
+  - dnsmasqs/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - network.openstack.org
+  resources:
+  - dnsmasqs/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - network.openstack.org
+  resources:
+  - services
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - network.openstack.org
+  resources:
+  - services/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - network.openstack.org
+  resources:
+  - services/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
   - neutron.openstack.org
   resources:
   - neutronapis
@@ -188,6 +1228,20 @@ rules:
   - update
   - watch
 - apiGroups:
+  - neutron.openstack.org
+  resources:
+  - neutronapis/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - neutron.openstack.org
+  resources:
+  - neutronapis/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
   - nova.openstack.org
   resources:
   - nova
@@ -199,6 +1253,209 @@ rules:
   - patch
   - update
   - watch
+- apiGroups:
+  - nova.openstack.org
+  resources:
+  - nova/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - nova.openstack.org
+  resources:
+  - nova/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - nova.openstack.org
+  resources:
+  - novaapis
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - nova.openstack.org
+  resources:
+  - novaapis/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - nova.openstack.org
+  resources:
+  - novaapis/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - nova.openstack.org
+  resources:
+  - novacells
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - nova.openstack.org
+  resources:
+  - novacells/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - nova.openstack.org
+  resources:
+  - novacells/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - nova.openstack.org
+  resources:
+  - novaconductors
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - nova.openstack.org
+  resources:
+  - novaconductors/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - nova.openstack.org
+  resources:
+  - novaconductors/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - nova.openstack.org
+  resources:
+  - novaexternalcomputes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - nova.openstack.org
+  resources:
+  - novaexternalcomputes/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - nova.openstack.org
+  resources:
+  - novaexternalcomputes/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - nova.openstack.org
+  resources:
+  - novametadata
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - nova.openstack.org
+  resources:
+  - novametadata/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - nova.openstack.org
+  resources:
+  - novametadata/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - nova.openstack.org
+  resources:
+  - novanovncproxies
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - nova.openstack.org
+  resources:
+  - novanovncproxies/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - nova.openstack.org
+  resources:
+  - novanovncproxies/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - nova.openstack.org
+  resources:
+  - novaschedulers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - nova.openstack.org
+  resources:
+  - novaschedulers/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - nova.openstack.org
+  resources:
+  - novaschedulers/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - operator.openshift.io
+  resources:
+  - ingresscontrollers
+  verbs:
+  - get
+  - list
 - apiGroups:
   - ovn.openstack.org
   resources:
@@ -214,10 +1471,40 @@ rules:
 - apiGroups:
   - ovn.openstack.org
   resources:
+  - ovncontrollers/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - ovn.openstack.org
+  resources:
+  - ovncontrollers/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - ovn.openstack.org
+  resources:
   - ovndbclusters
   verbs:
   - create
   - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ovn.openstack.org
+  resources:
+  - ovndbclusters/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - ovn.openstack.org
+  resources:
+  - ovndbclusters/status
+  verbs:
   - get
   - list
   - patch
@@ -236,6 +1523,46 @@ rules:
   - update
   - watch
 - apiGroups:
+  - ovn.openstack.org
+  resources:
+  - ovnnorthds/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - ovn.openstack.org
+  resources:
+  - ovnnorthds/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - ovs.openstack.org
+  resources:
+  - ovs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ovs.openstack.org
+  resources:
+  - ovs/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - ovs.openstack.org
+  resources:
+  - ovs/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
   - placement.openstack.org
   resources:
   - placementapis
@@ -247,6 +1574,20 @@ rules:
   - patch
   - update
   - watch
+- apiGroups:
+  - placement.openstack.org
+  resources:
+  - placementapis/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - placement.openstack.org
+  resources:
+  - placementapis/status
+  verbs:
+  - get
+  - patch
+  - update
 - apiGroups:
   - rabbitmq.com
   resources:
@@ -260,6 +1601,115 @@ rules:
   - update
   - watch
 - apiGroups:
+  - rabbitmq.openstack.org
+  resources:
+  - transporturls
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - rabbitmq.openstack.org
+  resources:
+  - transporturls/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - rabbitmq.openstack.org
+  resources:
+  - transporturls/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - rbac.authorization.k8s.io
+  resources:
+  - rolebindings
+  verbs:
+  - create
+  - get
+  - list
+  - update
+  - watch
+- apiGroups:
+  - rbac.authorization.k8s.io
+  resources:
+  - roles
+  verbs:
+  - create
+  - get
+  - list
+  - update
+  - watch
+- apiGroups:
+  - redis.openstack.org
+  resources:
+  - redises
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - redis.openstack.org
+  resources:
+  - redises/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - redis.openstack.org
+  resources:
+  - redises/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - route.openshift.io
+  resources:
+  - routes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - security.openshift.io
+  resourceNames:
+  - anyuid
+  resources:
+  - securitycontextconstraints
+  verbs:
+  - use
+- apiGroups:
+  - security.openshift.io
+  resourceNames:
+  - anyuid
+  - privileged
+  resources:
+  - securitycontextconstraints
+  verbs:
+  - use
+- apiGroups:
+  - security.openshift.io
+  resourceNames:
+  - hostnetwork
+  resources:
+  - securitycontextconstraints
+  verbs:
+  - use
+- apiGroups:
   - telemetry.openstack.org
   resources:
   - ceilometercentrals
@@ -271,3 +1721,112 @@ rules:
   - patch
   - update
   - watch
+- apiGroups:
+  - telemetry.openstack.org
+  resources:
+  - ceilometercentrals/finalizers
+  verbs:
+  - delete
+  - update
+- apiGroups:
+  - telemetry.openstack.org
+  resources:
+  - ceilometercentrals/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - telemetry.openstack.org
+  resources:
+  - ceilometercomputes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - telemetry.openstack.org
+  resources:
+  - ceilometercomputes/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - telemetry.openstack.org
+  resources:
+  - ceilometercomputes/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - telemetry.openstack.org
+  resources:
+  - infracomputes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - telemetry.openstack.org
+  resources:
+  - infracomputes/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - telemetry.openstack.org
+  resources:
+  - infracomputes/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - telemetry.openstack.org
+  resources:
+  - telemetries
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - telemetry.openstack.org
+  resources:
+  - telemetries/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - telemetry.openstack.org
+  resources:
+  - telemetries/status
+  verbs:
+  - get
+  - patch
+  - update
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  creationTimestamp: null
+  name: manager-role
+  namespace: openstack
+rules:
+- apiGroups:
+  - security.openshift.io
+  resourceNames:
+  - privileged
+  resources:
+  - securitycontextconstraints
+  verbs:
+  - use
